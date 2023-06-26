@@ -44,11 +44,11 @@ So for example:
 
 ## State Transitions
 
-![logic](https://github.com/Duniar-Group/frontend-task/blob/master/images/task-management-diagram.png|alt=octocat)
+![logic](https://raw.githubusercontent.com/Duniar-Group/frontend-task/main/images/task-management-diagram.png)
 
 ## Sample design
 
-![design-edit](https://github.com/Duniar-Group/frontend-task/blob/master/images/task-management-edit-task.png|alt=octocat)
-![design-edit-dropdown](https://github.com/Duniar-Group/frontend-task/blob/master/images/task-management-edit-task-open-dropdown.png|alt=octocat)
-![design-home](https://github.com/Duniar-Group/frontend-task/blob/master/images/task-management-home.png|alt=octocat)
-![design-zero-state](https://github.com/Duniar-Group/frontend-task/blob/master/images/task-management-zero-state.png|alt=octocat)
+![design-edit](https://raw.githubusercontent.com/Duniar-Group/frontend-task/main/images/task-management-edit-task.png)
+![design-edit-dropdown](https://raw.githubusercontent.com/Duniar-Group/frontend-task/main/images/task-management-edit-task-open-dropdown.png)
+![design-home](https://raw.githubusercontent.com/Duniar-Group/frontend-task/main/images/task-management-home.png)
+![design-zero-state](https://raw.githubusercontent.com/Duniar-Group/frontend-task/main/images/task-management-zero-state.png)
