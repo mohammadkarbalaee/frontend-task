@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+/* General styles */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3 {
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+p {
+  margin-bottom: 0;
+}
+
+/* Form styles */
+.new-task-section {
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+input,
+textarea{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: black;
+  background-color: #f2f2f3;
+  font-family: sans-serif;
+  font-size: 14px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+
+  &::placeholder {
+    color: #919191;
+  }
+
+  &:focus {
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 15px;
+  background-color: #1675B9;
+  color: #fff;
+}
+
+/* Tasks section styles */
+.tasks-section {
+  background-color: #1675B9;
+  margin-top: 10px;
+  height: 100vh;
+  color: white;
+  overflow-y: scroll;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.task-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: #A2CEED;
+}
+
+.task-column {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+}
+
+.task-column.todo {
+  border-color: #1675B9;
+}
+
+.task-column.inProgress {
+  border-color: #28a745;
+}
+
+.task-column.done {
+  border-color: #c0c0c0;
+}
+
+/* Scroll the task list only */
+.task-list {
+  overflow-y: auto;
+  max-height: 10px; /* Adjust the height as needed */
+}
+
+#header {
+  padding-left: 20px;
+  background-color: #1675B9;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+textarea {
+  height: 130px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  height: 30px;
+}
+
+#tasks-title {
+  padding: 0 20px;
 }
