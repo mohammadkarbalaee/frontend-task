@@ -88,44 +88,6 @@ button {
   color: #fff;
 }
 
-.tasks-section {
-  background-color: $primaryColor;
-  margin-top: 10px;
-  grid-row: 3 / span 1;
-  color: white;
-  overflow-y: scroll;
-  height: 55vh;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-}
-
-.task-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 25px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background-color: $secondaryColor;
-  height: 100%;
-  overflow-y: scroll;
-  align-content: start;
-}
-
-.task {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  box-shadow: 5px 5px 5px $boxShadowColor;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  overflow: hidden;
-  justify-content: space-around;
-  height: 12vh;
-  text-overflow: ellipsis;
-}
-
 #header {
   padding-left: 20px;
   background-color: $primaryColor;
@@ -133,11 +95,11 @@ button {
   height: auto;
 }
 
-textarea {
+.edit-task-section textarea {
   height: 400px;
 }
 
-input {
+.edit-task-section input {
   height: 50px;
 }
 
