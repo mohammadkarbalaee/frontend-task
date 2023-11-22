@@ -13,9 +13,6 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
   const [newTaskTitle, setNewTaskTitle] = useState<string>('');
   const [newTaskDescription, setNewTaskDescription] = useState<string>('');
 
-  console.log(taskId);
-
-
   return (
     <div className="container">
       <div id="header">
