@@ -67,21 +67,25 @@ const TaskManagementHomePage: React.FC = () => {
       <section className="tasks-section">
         <h3 id='tasks-title'>Tasks</h3>
 
-        <div className="task-columns">
-          {tasks.map((task) => (
-            <div key={task.id} className={`task-column ${task.status}`}>
-              <h3>{task.title}</h3>
-              <p>{task.description}</p>
+        {tasks.length === 0 ? (
+          <div className="empty-tasks">You have nothing to do. Get some sleep</div>
+        ) : (
+          <div className="task-columns">
+            {tasks.map((task) => (
+              <div key={task.id} className={`task-column ${task.status}`}>
+                <h3>{task.title}</h3>
+                <p>{task.description}</p>
 
-              <button
-                onClick={() => handleTaskStatusChange(task.id, 'done')}
-                disabled={task.status === 'done'}
-              >
-                Mark as Done
-              </button>
-            </div>
-          ))}
-        </div>
+                <button
+                  onClick={() => handleTaskStatusChange(task.id, 'done')}
+                  disabled={task.status === 'done'}
+                >
+                  Mark as Done
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );
