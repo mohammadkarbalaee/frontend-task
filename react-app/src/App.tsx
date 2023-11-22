@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.scss';
-import TaskManagementHomePage from './screens/home/TaskPage';
+import TaskPage from './screens/TaskPage';
 
 function App() {
   return (
-    <TaskManagementHomePage/>
+    <TaskPage/>
   );
 }
 
