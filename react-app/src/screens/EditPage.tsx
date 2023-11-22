@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/edit-page.scss';
 
-const EditPage: React.FC = () => {
+interface EditPageProps {
+  tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+}
+
+const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
+  const { taskId } = useParams<{ taskId: string }>(); 
   const [newTaskTitle, setNewTaskTitle] = useState<string>('');
   const [newTaskDescription, setNewTaskDescription] = useState<string>('');
+
+  console.log(taskId);
+
 
   return (
     <div className="container">

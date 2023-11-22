@@ -9,8 +9,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={<TaskPage tasks={tasks} setTasks={setTasks}/>} />
-      <Route path='/edit' element={<EditPage/>} />
+      <Route path='/' element={<TaskPage tasks={tasks} setTasks={setTasks} />} />
+      <Route path='/edit/:taskId' element={<EditPage tasks={tasks} setTasks={setTasks} />} />
     </Routes>
   );
 }

@@ -52,7 +52,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ tasks, setTasks }) => {
             <p>{task.description}</p>
             <div className="actions">
               <p>{task.status}</p>
-              <Link className="button" to="/edit">
+              <Link className="button" to= {`/edit/${task.id}`}>
                 {"edit"}
               </Link>
             </div>
