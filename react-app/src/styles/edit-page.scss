@@ -8,7 +8,7 @@ p {
   margin-bottom: 0;
 }
 
-.new-task-section {
+.edit-task-section {
   background-color: #fff;
   padding: 0 20px;
   min-height: 30px;
@@ -17,6 +17,42 @@ p {
 form {
   display: flex;
   flex-direction: column;
+
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #f2f2f3;
+    color: #333;
+    cursor: pointer;
+  }
+
+  select:hover {
+    border-color: #555;
+  }
+
+  select:focus {
+    outline: none;
+    border-color: #1675B9;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select option {
+    background-color: #f2f2f3;
+    color: #333;
+  }
 }
 
 input, textarea {
@@ -30,7 +66,6 @@ input, textarea {
   font-family: sans-serif;
   font-size: 14px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
 
   &::placeholder {
     color: $placeholderColor;
@@ -99,11 +134,11 @@ button {
 }
 
 textarea {
-  height: 130px;
+  height: 400px;
 }
 
 input {
-  height: 30px;
+  height: 50px;
 }
 
 #tasks-title {
@@ -160,3 +195,32 @@ input {
   background-color: transparent;
   color: $baseTextColor;
 }
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button-row button {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button-row button:last-child {
+  margin-right: 0;
+  background-color: white;
+  border: 1px solid $placeholderColor;
+  color: $placeholderColor;
+}
+
+.button-row button:hover {
+  background-color: #ddd;
+}
+
+/* ... Any additional styling based on your design preferences ... */
