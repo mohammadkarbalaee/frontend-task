@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 import { Task, TaskStatus } from '../models/Task';
 import './styles/TaskPage.scss';
+import { Link } from 'react-router-dom';
+
 
 const TaskPage: React.FC = () => {
-  const [newTaskTitle, setNewTaskTitle] = useState('');
-  const [newTaskDescription, setNewTaskDescription] = useState('');
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      id: 1,
-      title: 'ddd',
-      description: 'ddddddddddddddddddddd',
-      status: TaskStatus.Todo,
-    },
-  ]);
+  const [newTaskTitle, setNewTaskTitle] = useState<string>('');
+  const [newTaskDescription, setNewTaskDescription] = useState<string>('');
+  const [tasks, setTasks] = useState<Task[]>([]);
 
   const handleNewTaskSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,6 +27,7 @@ const TaskPage: React.FC = () => {
     setNewTaskTitle('');
     setNewTaskDescription('');
   };
+
 
   return (
     <div className="container">
@@ -72,7 +68,7 @@ const TaskPage: React.FC = () => {
                 <p>{task.description}</p>
                 <div className="actions">
                   <p>{task.status}</p>
-                  <button onClick={() => {}}>{"edi"}</button>
+                  <Link className='button' to={"/edit"}>{"edit"}</Link>
                 </div>
               </div>
             ))}
