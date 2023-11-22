@@ -1,0 +1,162 @@
+@import 'variables';
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.new-task-section {
+  background-color: #fff;
+  padding: 0 20px;
+  min-height: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 1px 3px $boxShadowColor;
+  color: $baseTextColor;
+  background-color: #f2f2f3;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+
+  &::placeholder {
+    color: $placeholderColor;
+  }
+
+  &:focus {
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px $focusBoxShadowColor;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 15px;
+  background-color: $primaryColor;
+  color: #fff;
+}
+
+.tasks-section {
+  background-color: $primaryColor;
+  margin-top: 10px;
+  grid-row: 3 / span 1;
+  color: white;
+  overflow-y: scroll;
+  height: 55vh;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.task-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 25px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: $secondaryColor;
+  height: 100%;
+  overflow-y: scroll;
+  align-content: start;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 5px 5px 5px $boxShadowColor;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  justify-content: space-around;
+  height: 12vh;
+  text-overflow: ellipsis;
+}
+
+#header {
+  padding-left: 20px;
+  background-color: $primaryColor;
+  color: white;
+  height: auto;
+}
+
+textarea {
+  height: 130px;
+}
+
+input {
+  height: 30px;
+}
+
+#tasks-title {
+  padding: 0 20px;
+}
+
+.empty-tasks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  color: $baseTextColor;
+  background-color: $secondaryColor;
+  font-size: 18px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.task h2, .task p {
+  color: $baseTextColor;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task p {
+  padding: 10px 0;
+  text-overflow: ellipsis;
+  max-height: 50px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+}
+
+.actions p {
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  flex: 1;
+  background-color: $primaryColor;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.actions .button {
+  flex: 0.2;
+  background-color: transparent;
+  color: $baseTextColor;
+}

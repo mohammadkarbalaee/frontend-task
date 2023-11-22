@@ -1,7 +1,7 @@
 export enum TaskStatus {
-    Todo = 'todo',
+    Todo = 'ToDo',
     InProgress = 'inProgress',
-    Done = 'done',
+    Done = 'Done',
 }
 
 export interface Task {

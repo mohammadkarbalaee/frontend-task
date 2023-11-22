@@ -1,9 +1,4 @@
-$primaryColor: #1675B9;
-$secondaryColor: #A2CEED;
-$baseTextColor: black;
-$placeholderColor: #919191;
-$boxShadowColor: rgba(0, 0, 0, 0.1);
-$focusBoxShadowColor: rgba(0, 0, 0, 0.2);
+@import 'variables';
 
 .container {
   display: grid;
@@ -68,7 +63,6 @@ button {
 .tasks-section {
   background-color: $primaryColor;
   margin-top: 10px;
-  grid-row: 3 / span 1;
   color: white;
   overflow-y: scroll;
   height: 55vh;
