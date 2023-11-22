@@ -2,9 +2,8 @@
 .container {
   display: grid;
   margin: 0 auto;
-  grid-template-rows: auto 1fr auto; /* The third row takes up all remaining height */
-  gap: 20px;
   height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }
 
 h1,
@@ -21,7 +20,7 @@ p {
 .new-task-section {
   background-color: #fff;
   padding: 0 20px;
-  min-height: 30;
+  min-height: 30px; /* Added unit */
 }
 
 form {
@@ -40,7 +39,6 @@ textarea {
   background-color: #f2f2f3;
   font-family: sans-serif;
   font-size: 14px;
-  padding: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 
@@ -69,13 +67,10 @@ button {
 .tasks-section {
   background-color: #1675B9;
   margin-top: 10px;
-  grid-row: 3;
-  display: flex;
-  flex-direction: column;
+  grid-row: 3 / span 1; /* Corrected grid-row */
   color: white;
   overflow-y: scroll;
-  min-height: 50vh;
-  flex: 1; /* Use flex to take up remaining height */
+  height: 55vh;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -84,40 +79,34 @@ button {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding: 25px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   background-color: #A2CEED;
+  height: 100%;
+  overflow-y: scroll;
+  align-content: start;
 }
 
-.task-column {
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  margin: 10px;
-  border: 1px solid #ddd;
-  background-color: #f8f9fa;
-}
-
-.task-column.todo {
-  border-color: #1675B9;
-}
-
-.task-column.inProgress {
-  border-color: #28a745;
-}
-
-.task-column.done {
-  border-color: #c0c0c0;
-}
-
-/* Scroll the task list only */
-.task-list {
-  overflow-y: auto;
-  max-height: 10px; /* Adjust the height as needed */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  justify-content: space-around;
+  height: 12vh;
+  text-overflow: ellipsis;
 }
 
 #header {
   padding-left: 20px;
   background-color: #1675B9;
   color: white;
+  height: auto; /* Set to auto */
 }
 
 textarea {
@@ -132,15 +121,55 @@ input {
   padding: 0 20px;
 }
 
-
 .empty-tasks {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; /* Occupy all available height */
+  min-height: 100%; /* Changed to min-height */
   color: black;
   background-color: #A2CEED;
   font-size: 18px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+}
+
+.task h2,
+.task p {
+  color: black;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.task p {
+  padding: 10px 0;
+  text-overflow: ellipsis;
+  max-height: 50px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+}
+
+.actions p {
+  padding: 10px 0; /* Removed duplicate padding property */
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  flex: 1;
+  background-color: #1675B9;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.actions button {
+  flex: 0.2;
+  background-color: transparent;
+  color: black;
+  /* Removed unnecessary properties: overflow: hidden; height: fit-content; */
 }

@@ -10,7 +10,14 @@ interface Task {
 const TaskManagementHomePage: React.FC = () => {
   const [newTaskTitle, setNewTaskTitle] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>([
+    {
+      id: 1,
+      title: 'ddd',
+      description: 'ddddddddddddddddddddd',
+      status: 'todo',
+    }
+  ]);
 
   const handleNewTaskSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,16 +79,19 @@ const TaskManagementHomePage: React.FC = () => {
         ) : (
           <div className="task-columns">
             {tasks.map((task) => (
-              <div key={task.id} className={`task-column ${task.status}`}>
-                <h3>{task.title}</h3>
+              <div key={task.id} className={`task`}>
+                <h2>{task.title}</h2>
                 <p>{task.description}</p>
-
-                <button
-                  onClick={() => handleTaskStatusChange(task.id, 'done')}
-                  disabled={task.status === 'done'}
-                >
-                  Mark as Done
-                </button>
+                <div className='actions'>
+                  <p>
+                    {task.status}
+                  </p>
+                  <button
+                    onClick={() => handleTaskStatusChange(task.id, 'done')}
+                  >
+                    {"edi"}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
