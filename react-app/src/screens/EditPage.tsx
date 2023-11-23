@@ -41,6 +41,25 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
     }
   };
 
+  const getStatusOptions = () => {
+    switch (taskStatus) {
+      case TaskStatus.Todo:
+        return [TaskStatus.Todo, TaskStatus.InProgress];
+      case TaskStatus.Blocked:
+        return [TaskStatus.Todo, TaskStatus.Blocked];
+      case TaskStatus.InProgress:
+        return [TaskStatus.InProgress, TaskStatus.InQA];
+      case TaskStatus.InQA:
+        return [TaskStatus.InQA, TaskStatus.Done, TaskStatus.Todo];
+      case TaskStatus.Done:
+        return [TaskStatus.Done, TaskStatus.Deployed];
+      case TaskStatus.Deployed:
+        return [TaskStatus.Deployed];
+      default:
+        return [];
+    }
+  };
+
   return (
     <div className="container">
       <div id="header">
@@ -68,15 +87,21 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
             value={taskStatus}
             onChange={(e) => setTaskStatus(e.target.value as TaskStatus)}
           >
-            <option value={TaskStatus.Todo}>To Do</option>
-            <option value={TaskStatus.InProgress}>In Progress</option>
-            <option value={TaskStatus.Done}>Done</option>
+            {getStatusOptions().map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
           </select>
         </form>
 
         <div className="button-row">
-          <Link className='edit' to="/" onClick={handleEdit}>Edit</Link>
-          <Link className='cancel' to="/">Cancel</Link>
+          <Link className='edit' to="/" onClick={handleEdit}>
+            Edit
+          </Link>
+          <Link className='cancel' to="/">
+            Cancel
+          </Link>
         </div>
       </section>
     </div>
