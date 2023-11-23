@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Task } from '../models/Task';
+import editIcon from "../assets/edit.svg";
 
 interface TasksListProps {
   tasks: Task[];
@@ -23,7 +24,7 @@ const TasksList: React.FC<TasksListProps> = ({ tasks, id }) => {
             <div className="actions">
               <p>{task.status}</p>
               <Link className="button" to={`/edit/${task.id}`}>
-                {"edit"}
+                <img src={editIcon} alt='Edit'/>
               </Link>
             </div>
           </div>

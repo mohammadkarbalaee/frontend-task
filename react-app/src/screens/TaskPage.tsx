@@ -3,6 +3,7 @@ import { Task, TaskStatus } from '../models/Task';
 import '../styles/task-page.scss';
 import TasksList from '../components/TasksList';
 
+
 interface TaskPageProps {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
