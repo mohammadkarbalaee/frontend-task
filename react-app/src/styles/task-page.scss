@@ -65,7 +65,7 @@ button {
   margin-top: 10px;
   color: white;
   overflow-y: scroll;
-  height: 55vh;
+  height: 50vh;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -165,4 +165,33 @@ input {
   flex: 0.2;
   background-color: transparent;
   color: $baseTextColor;
+}
+
+/* Responsive styles */
+@media only screen and (min-width: 768px) {
+  .container {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #list-in-task-page {
+    margin-top: 10px;
+    height: 100vh;
+  }
+
+  #header {
+    display: none;
+  }
+
+  .task {
+    height: 20vh;
+  }
+
+  textarea {
+    height: 65vh;
+  }
+  
+  input {
+    height: 10vh;
+  }
 }
