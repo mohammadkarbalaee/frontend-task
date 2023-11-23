@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router';
 import EditPage from './screens/EditPage';
 import { Task } from './models/Task';
 
-// Define a type for the tasks array
 type TasksType = Task[];
 
 function App() {

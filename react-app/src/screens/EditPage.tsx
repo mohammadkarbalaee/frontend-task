@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/edit-page.scss';
 import TasksList from '../components/TasksList';
+import editIcon from "../assets/edit_white.svg";
 
 interface EditPageProps {
   tasks: Task[];
@@ -98,7 +99,7 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
 
         <div className="button-row">
           <Link className='edit' to="/" onClick={handleEdit}>
-            Edit
+            <img src={editIcon} alt='Edit'/>
           </Link>
           <Link className='cancel' to="/">
             Cancel

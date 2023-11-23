@@ -167,7 +167,10 @@ input {
   color: $baseTextColor;
 }
 
-/* Responsive styles */
+.actions .button img{
+  width: 20px;
+}
+
 @media only screen and (min-width: 768px) {
   .container {
     grid-template-rows: auto 1fr;
@@ -194,4 +197,8 @@ input {
   input {
     height: 10vh;
   }
+}
+
+#add-icon {
+  width: 25px;
 }

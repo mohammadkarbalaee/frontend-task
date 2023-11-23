@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/task-page.scss';
 import TasksList from '../components/TasksList';
+import plusIcon from "../assets/plus.svg";
 
 interface TaskPageProps {
   tasks: Task[];
@@ -61,7 +62,9 @@ const TaskPage: React.FC<TaskPageProps> = ({ tasks, setTasks }) => {
             onChange={handleDescriptionChange}
           />
 
-          <button type="submit">Add</button>
+          <button type="submit">
+            <img id='add-icon' src={plusIcon} alt='Add'/>
+          </button>
         </form>
       </section>
       <TasksList tasks={tasks} id='list-in-task-page'/>
