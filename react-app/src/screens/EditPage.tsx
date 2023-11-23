@@ -75,7 +75,7 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
         </form>
 
         <div className="button-row">
-          <button onClick={handleEdit}>Edit</button>
+          <Link className='edit' to="/" onClick={handleEdit}>Edit</Link>
           <Link className='cancel' to="/">Cancel</Link>
         </div>
       </section>
