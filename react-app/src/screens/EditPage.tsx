@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/edit-page.scss';
 
@@ -13,10 +13,6 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
   const [newTaskTitle, setNewTaskTitle] = useState<string>('');
   const [newTaskDescription, setNewTaskDescription] = useState<string>('');
   const [taskStatus, setTaskStatus] = useState<TaskStatus>(TaskStatus.Todo);
-
-  const handleCancel = () => {
-    // Handle cancel action, for example, navigate back to the task details
-  };
 
   const handleEdit = () => {
     // Handle edit action, for example, update the task and navigate back to the task details
@@ -57,7 +53,7 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
 
         <div className="button-row">
           <button onClick={handleEdit}>Edit</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <Link className='cancel' to="/">Cancel</Link>
         </div>
       </section>
     </div>
