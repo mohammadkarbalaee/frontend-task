@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Task } from '../models/Task';
-import editIcon from "../assets/edit.svg";
+import editIcon from "../assets/edit_black.svg";
 
 interface TasksListProps {
   tasks: Task[];
