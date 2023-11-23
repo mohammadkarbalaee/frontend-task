@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/task-page.scss';
-import { Link } from 'react-router-dom';
+import TasksList from '../components/TasksList';
 
 interface TaskPageProps {
   tasks: Task[];
@@ -39,29 +39,6 @@ const TaskPage: React.FC<TaskPageProps> = ({ tasks, setTasks }) => {
     setNewTaskDescription('');
   };
 
-  const renderTasks = () => {
-    if (tasks.length === 0) {
-      return <div className="empty-tasks">You have nothing to do. Get some sleep</div>;
-    }
-
-    return (
-      <div className="task-columns">
-        {tasks.map((task) => (
-          <div key={task.id} className="task">
-            <h2>{task.title}</h2>
-            <p>{task.description}</p>
-            <div className="actions">
-              <p>{task.status}</p>
-              <Link className="button" to= {`/edit/${task.id}`}>
-                {"edit"}
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  };
-
   return (
     <div className="container">
       <div id="header">
@@ -87,11 +64,7 @@ const TaskPage: React.FC<TaskPageProps> = ({ tasks, setTasks }) => {
           <button type="submit">Add</button>
         </form>
       </section>
-
-      <section className="tasks-section">
-        <h3 id="tasks-title">Tasks</h3>
-        {renderTasks()}
-      </section>
+      <TasksList tasks={tasks} id='list-in-task-page'/>
     </div>
   );
 };

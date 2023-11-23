@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/edit-page.scss';
+import TasksList from '../components/TasksList';
 
 interface EditPageProps {
   tasks: Task[];
@@ -104,6 +105,7 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
           </Link>
         </div>
       </section>
+      <TasksList tasks={tasks} id='list-in-edit-page'/>
     </div>
   );
 };
