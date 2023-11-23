@@ -15,7 +15,20 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
   const [taskStatus, setTaskStatus] = useState<TaskStatus>(TaskStatus.Todo);
 
   const handleEdit = () => {
-    // Handle edit action, for example, update the task and navigate back to the task details
+    const taskToEdit = tasks.find(task => task.id === parseInt(taskId!, 10));
+
+    if (taskToEdit) {
+      const updatedTask: Task = {
+        ...taskToEdit,
+        title: newTaskTitle,
+        description: newTaskDescription,
+        status: taskStatus,
+      };
+
+      setTasks(prevTasks =>
+        prevTasks.map(task => (task.id === parseInt(taskId!, 10) ? updatedTask : task))
+      );
+    }
   };
 
   return (
