@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Task, TaskStatus } from '../models/Task';
 import '../styles/edit-page.scss';
@@ -13,6 +13,16 @@ const EditPage: React.FC<EditPageProps> = ({ tasks, setTasks }) => {
   const [newTaskTitle, setNewTaskTitle] = useState<string>('');
   const [newTaskDescription, setNewTaskDescription] = useState<string>('');
   const [taskStatus, setTaskStatus] = useState<TaskStatus>(TaskStatus.Todo);
+
+  useEffect(() => {
+    const taskToEdit = tasks.find(task => task.id === parseInt(taskId!, 10));
+
+    if (taskToEdit) {
+      setNewTaskTitle(taskToEdit.title);
+      setNewTaskDescription(taskToEdit.description);
+      setTaskStatus(taskToEdit.status);
+    }
+  }, [taskId, tasks]);
 
   const handleEdit = () => {
     const taskToEdit = tasks.find(task => task.id === parseInt(taskId!, 10));
